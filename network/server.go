@@ -77,7 +77,7 @@ func StartNode(clier Clier) {
 	// 创建本地节点地址信息
 	sourceMultiAddr, _ := multiaddr.NewMultiaddr(fmt.Sprintf("/ip4/%s/tcp/%s", ListenHost, ListenPort))
 	//传入地址信息，RSA密钥对信息，生成libp2p本地host信息
-	host, err := libp2p.New(
+	localhost, err := libp2p.New(
 		ctx,
 		transports,
 		//监听地址
@@ -95,15 +95,15 @@ func StartNode(clier Clier) {
 	}
 
 	//写入全局变量本地主机信息
-	localHost = host
+	localHost = localhost
 	//写入全局变量本地P2P节点地址详细信息
-	localAddr = fmt.Sprintf("/ip4/%s/tcp/%s/p2p/%s", ListenHost, ListenPort, host.ID().Pretty())
+	localAddr = fmt.Sprintf("/ip4/%s/tcp/%s/p2p/%s", ListenHost, ListenPort, localhost.ID().Pretty())
 	log.Infof("[*] 你的P2P地址信息: %s", localAddr)
 	//启动监听本地端口，并且传入一个处理流的函数，当本地节点接收到流的时候回调处理流的函数
-	host.SetStreamHandler(protocol.ID(ProtocolID), handleStream)
+	localhost.SetStreamHandler(protocol.ID(ProtocolID), handleStream)
 
 	//启用gossip 代替上面的
-	ps, err := pubsub.NewGossipSub(ctx, host)
+	ps, err := pubsub.NewGossipSub(ctx, localhost)
 	if err != nil {
 		panic(err)
 	}
@@ -114,8 +114,8 @@ func StartNode(clier Clier) {
 	}
 	go pubsubHandler(ctx, sub)
 
-	fmt.Printf("addr: %s\n", host.ID())
-	for _, addr := range host.Addrs() {
+	fmt.Printf("addr: %s\n", localhost.ID())
+	for _, addr := range localhost.Addrs() {
 		fmt.Println("Listening on", addr)
 	}
 
@@ -129,7 +129,7 @@ func StartNode(clier Clier) {
 		panic(err)
 	}
 
-	err = host.Connect(ctx, *targetInfo)
+	err = localhost.Connect(ctx, *targetInfo)
 	if err != nil {
 		panic(err)
 	}
@@ -138,11 +138,11 @@ func StartNode(clier Clier) {
 
 	//寻找p2p网络并加入到节点池里
 	//go findP2PPeer()
-	mdns, err := discovery.NewMdnsService(ctx, host, time.Second*10, "")
+	mdns, err := discovery.NewMdnsService(ctx, localhost, time.Second*10, RendezvousString)
 	if err != nil {
 		panic(err)
 	}
-	mdns.RegisterNotifee(&mdnsNotifee{h: host, ctx: ctx})
+	mdns.RegisterNotifee(&mdnsNotifee{h: localhost, ctx: ctx})
 
 	//路由bootstrap
 	err = dht.Bootstrap(ctx)
@@ -215,46 +215,6 @@ func signalHandle() {
 	os.Exit(0)
 }
 
-// 主动关闭服务器
-var server *http.Server
-
-//TODO 启动Http服务
-func StartHttpServer(clier Clier) {
-	// 一个通知退出的chan
-	quit := make(chan os.Signal)
-	signal.Notify(quit, os.Interrupt)
-
-	mux := http.NewServeMux()
-	//mux.Handle("/", &myHandler{})
-	//mux.HandleFunc("/bye", sayBye)
-
-	server = &http.Server{
-		Addr:         ":1211",
-		WriteTimeout: time.Second * 4,
-		Handler:      mux,
-	}
-
-	go func() {
-		// 接收退出信号
-		<-quit
-		if err := server.Close(); err != nil {
-			log.Fatal("Close server:", err)
-		}
-	}()
-
-	log.Info("Starting v3 httpserver")
-	err := server.ListenAndServe()
-	if err != nil {
-		// 正常退出
-		if err == http.ErrServerClosed {
-			log.Fatal("Server closed under request")
-		} else {
-			log.Fatal("Server closed unexpected", err)
-		}
-	}
-	log.Fatal("Server exited")
-}
-
 //websocket服务
 func StartWebsocketServer(clier Clier) {
 	fmt.Println("Listening on", "http://"+WebsocketAddr+":"+WebsocketPort+"/ws")
@@ -275,5 +235,6 @@ type mdnsNotifee struct {
 }
 
 func (m *mdnsNotifee) HandlePeerFound(pi peer.AddrInfo) {
-	m.h.Connect(m.ctx, pi)
+	err := m.h.Connect(m.ctx, pi)
+	panic(err)
 }

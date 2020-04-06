@@ -1,5 +1,7 @@
 package main
 
-func main() {
+import "testing"
+
+func testChannel(t *testing.T) {
 
 }

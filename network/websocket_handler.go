@@ -6,6 +6,7 @@ import (
 	"github.com/gorilla/websocket"
 	"net/http"
 	"sync"
+	"time"
 )
 
 var (
@@ -19,6 +20,7 @@ var (
 
 //websocket连接池
 var WebSocketConnList []*Connection
+var UserConnectNum = 0
 
 //TODO 区块头发送主要方法
 func wsHandler(w http.ResponseWriter, r *http.Request) {
@@ -31,7 +33,6 @@ func wsHandler(w http.ResponseWriter, r *http.Request) {
 	)
 	// 完成ws协议的握手操作
 	// Upgrade:websocket
-
 	if wsConn, err = upgrader.Upgrade(w, r, nil); err != nil {
 		return
 	}
@@ -41,17 +42,8 @@ func wsHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	WebSocketConnList = append(WebSocketConnList, conn)
-
-	// 启动线程，不断发消息
-	//go func(){
-	//	var (err error)
-	//	for{
-	//		if err = conn.WriteMessage([]byte("heartbeat"));err != nil{
-	//			return
-	//		}
-	//		time.Sleep(1*time.Second)
-	//	}
-	//}()
+	UserConnectNum++
+	log.Debugf("一位用户已连接，目前连接用户数量为%d", UserConnectNum)
 
 	for {
 		if data, err = conn.ReadMessage(); err != nil {
@@ -60,9 +52,13 @@ func wsHandler(w http.ResponseWriter, r *http.Request) {
 		if err = conn.WriteMessage(data); err != nil {
 			goto ERR
 		}
+		//60秒一次连接保持
+		time.Sleep(60 * time.Second)
 	}
 
 ERR:
+	UserConnectNum--
+	log.Debugf("一位用户连接已经断开，目前连接用户数量为%d", UserConnectNum)
 	conn.Close()
 
 }
@@ -71,7 +67,7 @@ ERR:
 func WebSocketPushMessage(message []byte) {
 	var err error
 	length := len(WebSocketConnList)
-	log.Infof("检测到共有%d个用户节点接入", length)
+	log.Infof("检测到共有%d个用户节点接入", UserConnectNum)
 	for i := 0; i < length; i++ {
 		if err = (WebSocketConnList[i]).WriteMessage(message); err != nil {
 			WebSocketConnList = append(WebSocketConnList[0:i], WebSocketConnList[i+1:]...)

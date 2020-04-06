@@ -60,12 +60,15 @@ type Block struct {
 //	return &block, nil
 //}
 
+var TempTransactions *[]Transaction
+
 //TODO 进行挖矿来生成区块
 //blockheader 中preHash 已知 merkelTreeRoot 已知 preRandomMatrix
 //CA 已知 Height 已知
 //未知：MerkelRootWHash MerkelRootWSignature TransactionToUser TimeStamp RandomMatrix Hash
 func mineBlock(transactions []Transaction, preHash []byte, height int, preRandomMatrix RandomMatrix, cA CACertificate, wsend WebsocketSender) (*Block, error) {
 
+	TempTransactions = &transactions
 	//生成一笔奖励
 	timeStamp := time.Now().Unix()
 	//生成交易的merkelRoot
@@ -90,31 +93,22 @@ func mineBlock(transactions []Transaction, preHash []byte, height int, preRandom
 		Hash:                 nil,
 	}
 
+	block := Block{
+		BBlockHeader: blockHeader,
+		Transactions: transactions,
+	}
+
 	//TODO POW
 	//传递Blockheader进行PoW
-	pow := NewProofOfWork(&blockHeader)
+	pow := NewProofOfWork(&block)
 	MinedBlockHeader, err := pow.run(wsend)
 	if err != nil {
 		return nil, err
 	}
-	//randomMatrix := RandomMatrix{[10][10]int64{
-	//	[10]int64{nonce, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	//	[10]int64{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	//	[10]int64{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	//	[10]int64{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	//	[10]int64{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	//	[10]int64{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	//	[10]int64{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	//	[10]int64{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	//	[10]int64{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	//	[10]int64{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	//}}
 
-	block := Block{
-		BBlockHeader: MinedBlockHeader,
-		Transactions: transactions,
-	}
-	blockHeader = MinedBlockHeader
+	block.BBlockHeader = *MinedBlockHeader
+
+	//blockHeader = *MinedBlockHeader
 
 	log.Info("pow verify : ", pow.Verify())
 	log.Infof("已生成新的区块,区块高度为%d", block.BBlockHeader.Height)

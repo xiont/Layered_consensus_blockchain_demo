@@ -40,4 +40,7 @@ const maxInt = math.MaxInt64
 // TODO 该节点的挖矿收款地址
 var ThisNodeAddr string
 
+// TODO 验证次数 W
+var WNum int
+
 //const cACeritificate1 = CACertificate{"00000"}

@@ -215,8 +215,8 @@ func (bc *blockchain) CreateTransaction(from, to string, amount string, send Sen
 		}
 
 		//打包交易的核心操作
-		newTXInput := []TXInput{}
-		newTXOutput := []TXOutput{}
+		var newTXInput []TXInput
+		var newTXOutput []TXOutput
 		var amount int
 		for _, utxo := range utxos {
 			amount += utxo.Vout.Value
@@ -531,7 +531,7 @@ func (bc *blockchain) findAllUTXOs() map[string][]*UTXO {
 
 		for i := len(currentTransactions) - 1; i >= 0; i-- {
 			//for i := len(currentBlock.Transactions) - 1; i >= 0; i-- {
-			var utxos = []*UTXO{}
+			var utxos []*UTXO
 			ts := currentTransactions[i]
 			for _, vInt := range ts.Vint {
 				txInputmap[string(vInt.TxHash)] = append(txInputmap[string(vInt.TxHash)], vInt)

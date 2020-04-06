@@ -88,7 +88,10 @@ func getChineseMnemonicWord() []string {
 		}
 		s = append(s, string(b))
 	}
-	file.Close()
+	err = file.Close()
+	if err != nil {
+		log.Panic(err)
+	}
 	return s
 }
 

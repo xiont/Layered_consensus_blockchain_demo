@@ -62,6 +62,7 @@ func httpFindTransaction(w http.ResponseWriter, r *http.Request) {
 	_, _ = w.Write(SerializeTransaction(ts))
 }
 
+//调用区块模块进行挖矿操作
 //TODO 处理提交上来的已经证明的区块 var CMineStruct  = "push_mine_struct"  //user_net 向云节点发送已证明的数据
 func httpPushMinedBlockHeader(w http.ResponseWriter, r *http.Request) {
 	log.Debug("接收到用户节点提交区块！！")
@@ -71,17 +72,32 @@ func httpPushMinedBlockHeader(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("read err")
 	}
 	minedBH := block.DeserializeBlockHeader(minedBHBytes)
-	//TODO 此处应该要做一次验证(要取得刚刚的区块头，用现在的数据做一次验证)
+	//TODO 此处应该要做一次验证(要取得刚刚的区块头，用现在的数据做一次验证，验证之后再返回)
 
-	//block.MineReturnStruct.Nonce = mine.Nonce
-	//block.MineReturnStruct.Ts = mine.Ts
-	//block.MineReturnStruct.HashByte = mine.HashByte
-	//block.MineReturnStruct.Err = nil
-	block.MineReturnBH = *minedBH
-	block.MineFlag = true
-	//fmt.Printf("%s",ts)
-	//TODO 接收到信息，应该要向用户节点反馈
-	data := jointMessage(cGMessage, []byte("云节点已接收提交区块(但不一定上链)！"))
+	//block.MineReturnBH = *minedBH
+	//进行一次验证,通过允许区块存储，并通知其它云节点，否则放弃
+	var data []byte
+	pow := block.NewProofOfWork(&block.Block{
+		BBlockHeader: *minedBH,
+		Transactions: *block.TempTransactions,
+	})
+	if pow.Verify() {
+		//验证通过，置位标志符
+		//block.MineFlag = true
+		//通道为空，才向通道写数据
+		if len(block.MinedChan) == 0 {
+			block.MinedChan <- minedBH
+			//接收到信息，应该要向用户节点反馈
+			data = jointMessage(cGMessage, []byte("云节点已接收提交区块(但不一定上链)！"))
+		} else {
+			data = jointMessage(cGMessage, []byte("已有用户节点提前提交区块，区块已经丢弃！"))
+		}
+	} else {
+		data = jointMessage(cGMessage, []byte("提交的区块未通过云节点验证，已经丢弃！"))
+	}
+
+	//lock.Unlock()
+	//block.MineFlag = true
 	_, _ = w.Write(data)
 }
 

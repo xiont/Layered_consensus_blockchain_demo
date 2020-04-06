@@ -52,7 +52,7 @@ func TestReadTxt(t *testing.T) {
 		t.Error(err)
 	}
 	b := make([]byte, 6)
-	file.ReadAt(b, 3)
+	_, _ = file.ReadAt(b, 3)
 	println(string(b))
 	//s:=[]string{}
 	//设置助记词文件为utf-8 一个中文两个字节
@@ -69,5 +69,5 @@ func TestReadTxt(t *testing.T) {
 	//	}
 	//	s=append(s,string(b))
 	//}
-	file.Close()
+	_ = file.Close()
 }

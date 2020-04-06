@@ -19,7 +19,7 @@ func printUsage() {
 	fmt.Println("Usage:")
 	fmt.Println("\thelp                                              打印命令行说明")
 	fmt.Println("\tgenesis  -a DATA  -v DATA                         生成创世区块")
-	fmt.Println("\tsetRewardAddr -a DATA                             设置挖矿奖励地址")
+	fmt.Println("\tsetRewardAddr -a DATA                             设置云计算节点奖励地址")
 	fmt.Println("\tgenerateWallet                                    创建新钱包")
 	fmt.Println("\timportMnword -m DATA                              根据助记词导入钱包")
 	fmt.Println("\tprintAllWallets                                   查看本地存在的钱包信息")
@@ -39,10 +39,8 @@ func (cli *Cli) Run(ui bool) {
 	if ui {
 		printUsage()
 	}
-	go cli.startNode()
 
-	//该服务暂停
-	//go cli.startHttpServer()
+	go cli.startNode()
 
 	go cli.startWebsocketServer()
 
@@ -113,7 +111,7 @@ func (cli Cli) userCmdHandle(data string) {
 	case "resetUTXODB":
 		cli.resetUTXODB()
 	case "transfer":
-		fromString := (context[strings.Index(context, "-from")+len("-from") : strings.Index(context, "-to")])
+		fromString := context[strings.Index(context, "-from")+len("-from") : strings.Index(context, "-to")]
 		toString := strings.TrimSpace(context[strings.Index(context, "-to")+len("-to") : strings.Index(context, "-amount")])
 		amountString := strings.TrimSpace(context[strings.Index(context, "-amount")+len("-amount"):])
 		cli.transfer(fromString, toString, amountString)

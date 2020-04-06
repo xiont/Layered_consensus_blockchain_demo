@@ -126,7 +126,7 @@ func mineBlock(t Transactions) {
 	for {
 		//满足交易池规定的大小后进行挖矿
 		if len(tradePool.Ts) >= TradePoolLength {
-			log.Debugf("交易池已满足挖矿交易数量大小限制:%d,即将进行挖矿", TradePoolLength)
+			log.Debugf("交易池已满足挖矿交易数量大小限制:%d,区块头即将分发至用户节点", TradePoolLength)
 			mineTrans := Transactions{make([]Transaction, TradePoolLength)}
 			copy(mineTrans.Ts, tradePool.Ts[:TradePoolLength])
 
@@ -165,7 +165,7 @@ func handleBlock(content []byte) {
 	block.Deserialize(content)
 	log.Infof("本节点已接收到来自其他节点的区块数据，该块hash为：%x", block.BBlockHeader.Hash)
 	bc := blc.NewBlockchain()
-	pow := blc.NewProofOfWork(&block.BBlockHeader)
+	pow := blc.NewProofOfWork(block)
 	//fmt.Printf("交易hash %d,交易VOut",block.BBlockHeader.Height)
 	//重新计算本块hash,进行pow验证
 	if pow.Verify() {
@@ -279,6 +279,11 @@ func handleVersion(content []byte) {
 		}
 	} else if blc.NewestBlockHeight < v.Height {
 		log.Debugf("对方版本比咱们大%v,发送获取区块的hash信息！", v)
+		//TODO 其他云计算节点出了区块，结束本次挖矿,向通道中写入空指针
+		if len(blc.MinedChan) == 0 {
+			blc.MinedChan <- nil
+		}
+
 		gh := getHash{blc.NewestBlockHeight, localAddr}
 		blc.NewestBlockHeight = v.Height
 		data := jointMessage(cGetHash, gh.serialize())

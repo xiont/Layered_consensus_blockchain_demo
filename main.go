@@ -29,6 +29,7 @@ func init() {
 	tradePoolLength := viper.GetInt("blockchain.trade_pool_length")
 	mineDifficultyValue := viper.GetInt("blockchain.mine_difficulty_value")
 	chineseMnwordPath := viper.GetString("blockchain.chinese_mnemonic_path")
+	wNum := viper.GetInt("blockchain.w_num")
 
 	//Todo给予挖矿用户的奖励
 	thisNodeaddr := viper.GetString("user.this_node_addr")
@@ -50,7 +51,6 @@ func init() {
 	network.BootstrapAddr = bootstrapAddr
 	network.BootstrapHost = bootstrapHost
 	network.BootstrapPort = bootstrapPort
-
 	network.WebsocketPort = websocket_port
 
 	database.ListenPort = listenPort
@@ -59,6 +59,7 @@ func init() {
 	block.TargetBits = uint(mineDifficultyValue)
 	block.ChineseMnwordPath = chineseMnwordPath
 	block.ThisNodeAddr = thisNodeaddr
+	block.WNum = wNum
 
 	//将日志输出到指定文件
 	file, err := os.OpenFile(fmt.Sprintf("%slog%s.txt", logPath, listenPort), os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
