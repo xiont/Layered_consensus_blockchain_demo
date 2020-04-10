@@ -236,5 +236,7 @@ type mdnsNotifee struct {
 
 func (m *mdnsNotifee) HandlePeerFound(pi peer.AddrInfo) {
 	err := m.h.Connect(m.ctx, pi)
-	panic(err)
+	if err != nil {
+		panic(err)
+	}
 }

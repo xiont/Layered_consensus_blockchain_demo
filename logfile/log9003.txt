@@ -4133,3 +4133,425 @@
 [32m[TRACE]: 2020/04/06 19:54:43 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
 [36m[DEBUG]: 2020/04/06 19:54:43 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9003/p2p/QmX4fCtPmpCA3115E3orQR8b4JFhXitidkdWGnSiW6NCK4，该块hash为0000003bc66964c4b901425ae005354f0ade0a49dbf0134f64e6fc2bd26cc959[0m
 [36m[DEBUG]: 2020/04/06 19:54:43 send.go:95:SendMessage: send cmd:block to peer:{QmX4fCtPmpCA3115E3orQR8b4JFhXitidkdWGnSiW6NCK4: [/ip4/0.0.0.0/tcp/9003]}[0m
+[34m[INFO]: 2020/04/09 16:11:18 server.go:221:StartWebsocketServer: =====Starting v3 websocketServer:0.0.0.0:7003=======[0m
+[34m[INFO]: 2020/04/09 16:11:18 server.go:47:StartNode: [*] 监听IP地址: 0.0.0.0 端口号: 9003[0m
+[34m[INFO]: 2020/04/09 16:11:18 server.go:101:StartNode: [*] 你的P2P地址信息: /ip4/0.0.0.0/tcp/9003/p2p/QmVEZyjfnXokg4oc5bucrxXCwknu1w8Sc6bz833prBaq2G[0m
+[34m[INFO]: 2020/04/09 16:11:24 websocket_handler.go:70:WebSocketPushMessage: 检测到共有0个用户节点接入[0m
+[32m[TRACE]: 2020/04/09 16:11:24 send.go:35:SendVersionToPeers: version信息发送完毕...[0m
+[32m[TRACE]: 2020/04/09 16:11:24 handle.go:29:pubsubHandler: 本节点已接收到命令：version[0m
+[36m[DEBUG]: 2020/04/09 16:11:24 handle.go:292:handleVersion: 接收到版本信息，双方高度一致，无需处理！[0m
+[32m[TRACE]: 2020/04/09 16:13:24 handle.go:29:pubsubHandler: 本节点已接收到命令：transaction[0m
+[36m[DEBUG]: 2020/04/09 16:13:24 handle.go:129:mineBlock: 交易池已满足挖矿交易数量大小限制:2,区块头即将分发至用户节点[0m
+[36m[DEBUG]: 2020/04/09 16:13:24 blockchain.go:435:verifyTransactionsSign: 已完成数字签名验证[0m
+[36m[DEBUG]: 2020/04/09 16:13:24 blockchain.go:340:VerifyTransBalance: 已完成UTXO交易余额验证[0m
+[34m[INFO]: 2020/04/09 16:13:24 websocket_handler.go:70:WebSocketPushMessage: 检测到共有0个用户节点接入[0m
+[32m[TRACE]: 2020/04/09 16:18:37 handle.go:29:pubsubHandler: 本节点已接收到命令：version[0m
+[36m[DEBUG]: 2020/04/09 16:18:37 handle.go:281:handleVersion: 对方版本比咱们大{0 61 /ip4/0.0.0.0/tcp/9003/p2p/QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU},发送获取区块的hash信息！[0m
+[33m[WARN]: 2020/04/09 16:18:37 blockchain.go:359:addBlockchain: 其他云计算节点已经挖到区块了[0m
+[34m[INFO]: 2020/04/09 16:18:37 handle.go:156:mineBlock: 当前交易池数量:0，交易池未满2，暂不进行挖矿操作[0m
+[36m[DEBUG]: 2020/04/09 16:18:37 send.go:95:SendMessage: send cmd:getHash to peer:{QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU: [/ip4/0.0.0.0/tcp/9003]}[0m
+[32m[TRACE]: 2020/04/09 16:18:37 handle.go:58:handleStream: 本节点已接收到命令：hashMap[0m
+[36m[DEBUG]: 2020/04/09 16:18:37 send.go:95:SendMessage: send cmd:getBlock to peer:{QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU: [/ip4/0.0.0.0/tcp/9003]}[0m
+[36m[DEBUG]: 2020/04/09 16:18:37 handle.go:237:handleHashMap: 已发送获取区块信息命令,目标高度为：61[0m
+[32m[TRACE]: 2020/04/09 16:18:38 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/09 16:18:38 handle.go:166:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：0000006b850d231d7f5caa11550e09bd7f3cdd6bdb642d95d71758c34743c2c5[0m
+[34m[INFO]: 2020/04/09 16:18:38 handle.go:172:handleBlock: POW验证通过,该区块高度为：61[0m
+[34m[INFO]: 2020/04/09 16:18:43 handle.go:200:handleBlock: prehash验证通过,该区块高度为:61,[0m
+[34m[INFO]: 2020/04/09 16:18:43 handle.go:201:handleBlock: 总验证通过已存入本地库,区块高度61,哈希0000006b850d231d7f5caa11550e09bd7f3cdd6bdb642d95d71758c34743c2c5[0m
+[32m[TRACE]: 2020/04/09 16:24:31 handle.go:29:pubsubHandler: 本节点已接收到命令：transaction[0m
+[36m[DEBUG]: 2020/04/09 16:24:31 handle.go:129:mineBlock: 交易池已满足挖矿交易数量大小限制:2,区块头即将分发至用户节点[0m
+[36m[DEBUG]: 2020/04/09 16:24:31 blockchain.go:435:verifyTransactionsSign: 已完成数字签名验证[0m
+[36m[DEBUG]: 2020/04/09 16:24:31 blockchain.go:340:VerifyTransBalance: 已完成UTXO交易余额验证[0m
+[34m[INFO]: 2020/04/09 16:24:31 websocket_handler.go:70:WebSocketPushMessage: 检测到共有0个用户节点接入[0m
+[32m[TRACE]: 2020/04/09 16:25:45 handle.go:29:pubsubHandler: 本节点已接收到命令：version[0m
+[36m[DEBUG]: 2020/04/09 16:25:45 handle.go:281:handleVersion: 对方版本比咱们大{0 62 /ip4/0.0.0.0/tcp/9003/p2p/QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU},发送获取区块的hash信息！[0m
+[33m[WARN]: 2020/04/09 16:25:45 blockchain.go:359:addBlockchain: 其他云计算节点已经挖到区块了[0m
+[34m[INFO]: 2020/04/09 16:25:45 handle.go:156:mineBlock: 当前交易池数量:0，交易池未满2，暂不进行挖矿操作[0m
+[36m[DEBUG]: 2020/04/09 16:25:45 send.go:95:SendMessage: send cmd:getHash to peer:{QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU: [/ip4/0.0.0.0/tcp/9003]}[0m
+[32m[TRACE]: 2020/04/09 16:25:45 handle.go:58:handleStream: 本节点已接收到命令：hashMap[0m
+[36m[DEBUG]: 2020/04/09 16:25:45 send.go:95:SendMessage: send cmd:getBlock to peer:{QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU: [/ip4/0.0.0.0/tcp/9003]}[0m
+[36m[DEBUG]: 2020/04/09 16:25:45 handle.go:237:handleHashMap: 已发送获取区块信息命令,目标高度为：62[0m
+[32m[TRACE]: 2020/04/09 16:25:46 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/09 16:25:46 handle.go:166:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：0000006d4879af60f57df0cb6dc21dda99cf6aa04541f67e855068f4b05cf807[0m
+[34m[INFO]: 2020/04/09 16:25:46 handle.go:172:handleBlock: POW验证通过,该区块高度为：62[0m
+[34m[INFO]: 2020/04/09 16:25:50 handle.go:200:handleBlock: prehash验证通过,该区块高度为:62,[0m
+[34m[INFO]: 2020/04/09 16:25:50 handle.go:201:handleBlock: 总验证通过已存入本地库,区块高度62,哈希0000006d4879af60f57df0cb6dc21dda99cf6aa04541f67e855068f4b05cf807[0m
+[32m[TRACE]: 2020/04/09 16:29:24 handle.go:29:pubsubHandler: 本节点已接收到命令：transaction[0m
+[36m[DEBUG]: 2020/04/09 16:29:24 handle.go:129:mineBlock: 交易池已满足挖矿交易数量大小限制:2,区块头即将分发至用户节点[0m
+[36m[DEBUG]: 2020/04/09 16:29:24 blockchain.go:435:verifyTransactionsSign: 已完成数字签名验证[0m
+[36m[DEBUG]: 2020/04/09 16:29:24 blockchain.go:340:VerifyTransBalance: 已完成UTXO交易余额验证[0m
+[34m[INFO]: 2020/04/09 16:29:24 websocket_handler.go:70:WebSocketPushMessage: 检测到共有0个用户节点接入[0m
+[32m[TRACE]: 2020/04/09 16:33:26 handle.go:29:pubsubHandler: 本节点已接收到命令：version[0m
+[36m[DEBUG]: 2020/04/09 16:33:26 handle.go:281:handleVersion: 对方版本比咱们大{0 63 /ip4/0.0.0.0/tcp/9003/p2p/QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU},发送获取区块的hash信息！[0m
+[33m[WARN]: 2020/04/09 16:33:26 blockchain.go:359:addBlockchain: 其他云计算节点已经挖到区块了[0m
+[34m[INFO]: 2020/04/09 16:33:26 handle.go:156:mineBlock: 当前交易池数量:0，交易池未满2，暂不进行挖矿操作[0m
+[36m[DEBUG]: 2020/04/09 16:33:26 send.go:95:SendMessage: send cmd:getHash to peer:{QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU: [/ip4/0.0.0.0/tcp/9003]}[0m
+[32m[TRACE]: 2020/04/09 16:33:26 handle.go:58:handleStream: 本节点已接收到命令：hashMap[0m
+[36m[DEBUG]: 2020/04/09 16:33:26 send.go:95:SendMessage: send cmd:getBlock to peer:{QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU: [/ip4/0.0.0.0/tcp/9003]}[0m
+[36m[DEBUG]: 2020/04/09 16:33:26 handle.go:237:handleHashMap: 已发送获取区块信息命令,目标高度为：63[0m
+[32m[TRACE]: 2020/04/09 16:33:27 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/09 16:33:27 handle.go:166:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：000000e99e9f9e15e636130759dd1a90bbd38b5f19ddc282490b65f401cdacae[0m
+[34m[INFO]: 2020/04/09 16:33:27 handle.go:172:handleBlock: POW验证通过,该区块高度为：63[0m
+[34m[INFO]: 2020/04/09 16:33:32 handle.go:200:handleBlock: prehash验证通过,该区块高度为:63,[0m
+[34m[INFO]: 2020/04/09 16:33:32 handle.go:201:handleBlock: 总验证通过已存入本地库,区块高度63,哈希000000e99e9f9e15e636130759dd1a90bbd38b5f19ddc282490b65f401cdacae[0m
+[32m[TRACE]: 2020/04/09 17:08:58 handle.go:29:pubsubHandler: 本节点已接收到命令：transaction[0m
+[31m[ERROR]: 2020/04/09 17:08:58 handle.go:91:handleTransaction: 没有满足条件的转账信息，顾不存入交易池[0m
+[32m[TRACE]: 2020/04/09 18:45:26 handle.go:29:pubsubHandler: 本节点已接收到命令：transaction[0m
+[36m[DEBUG]: 2020/04/09 18:45:26 handle.go:129:mineBlock: 交易池已满足挖矿交易数量大小限制:2,区块头即将分发至用户节点[0m
+[36m[DEBUG]: 2020/04/09 18:45:26 blockchain.go:435:verifyTransactionsSign: 已完成数字签名验证[0m
+[36m[DEBUG]: 2020/04/09 18:45:26 blockchain.go:340:VerifyTransBalance: 已完成UTXO交易余额验证[0m
+[34m[INFO]: 2020/04/09 18:45:26 websocket_handler.go:70:WebSocketPushMessage: 检测到共有0个用户节点接入[0m
+[32m[TRACE]: 2020/04/09 18:49:10 handle.go:29:pubsubHandler: 本节点已接收到命令：version[0m
+[36m[DEBUG]: 2020/04/09 18:49:10 handle.go:281:handleVersion: 对方版本比咱们大{0 64 /ip4/0.0.0.0/tcp/9003/p2p/QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU},发送获取区块的hash信息！[0m
+[33m[WARN]: 2020/04/09 18:49:10 blockchain.go:359:addBlockchain: 其他云计算节点已经挖到区块了[0m
+[34m[INFO]: 2020/04/09 18:49:10 handle.go:156:mineBlock: 当前交易池数量:0，交易池未满2，暂不进行挖矿操作[0m
+[36m[DEBUG]: 2020/04/09 18:49:10 send.go:95:SendMessage: send cmd:getHash to peer:{QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU: [/ip4/0.0.0.0/tcp/9003]}[0m
+[32m[TRACE]: 2020/04/09 18:49:11 handle.go:58:handleStream: 本节点已接收到命令：hashMap[0m
+[36m[DEBUG]: 2020/04/09 18:49:11 send.go:95:SendMessage: send cmd:getBlock to peer:{QmT6xhERfP6QPJFfTW4Abe9BLgxkua7hzmh7Pprj11R1KU: [/ip4/0.0.0.0/tcp/9003]}[0m
+[36m[DEBUG]: 2020/04/09 18:49:11 handle.go:237:handleHashMap: 已发送获取区块信息命令,目标高度为：64[0m
+[32m[TRACE]: 2020/04/09 18:49:11 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/09 18:49:11 handle.go:166:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：00000004058e103511b8bed60e0f1f0198efa84e1428f7e3247f6160b08d75f9[0m
+[34m[INFO]: 2020/04/09 18:49:11 handle.go:172:handleBlock: POW验证通过,该区块高度为：64[0m
+[34m[INFO]: 2020/04/09 18:49:16 handle.go:200:handleBlock: prehash验证通过,该区块高度为:64,[0m
+[34m[INFO]: 2020/04/09 18:49:16 handle.go:201:handleBlock: 总验证通过已存入本地库,区块高度64,哈希00000004058e103511b8bed60e0f1f0198efa84e1428f7e3247f6160b08d75f9[0m
+[32m[TRACE]: 2020/04/09 20:43:59 handle.go:29:pubsubHandler: 本节点已接收到命令：myError[0m
+[33m[WARN]: 2020/04/09 20:43:59 handle.go:81:handleMyError: 节点:/ip4/0.0.0.0/tcp/9003/p2p/QmVEZyjfnXokg4oc5bucrxXCwknu1w8Sc6bz833prBaq2G已退出网络[0m
+[34m[INFO]: 2020/04/09 20:46:02 server.go:221:StartWebsocketServer: =====Starting v3 websocketServer:0.0.0.0:7003=======[0m
+[34m[INFO]: 2020/04/09 20:46:02 server.go:47:StartNode: [*] 监听IP地址: 0.0.0.0 端口号: 9003[0m
+[34m[INFO]: 2020/04/09 20:46:02 server.go:101:StartNode: [*] 你的P2P地址信息: /ip4/0.0.0.0/tcp/9003/p2p/Qme8sdGyNQuBkZda5NGqcoRxdKJufyiD5fWENHkm5FcK3c[0m
+[34m[INFO]: 2020/04/09 20:46:07 websocket_handler.go:70:WebSocketPushMessage: 检测到共有0个用户节点接入[0m
+[32m[TRACE]: 2020/04/09 20:46:07 send.go:35:SendVersionToPeers: version信息发送完毕...[0m
+[32m[TRACE]: 2020/04/09 20:46:07 handle.go:29:pubsubHandler: 本节点已接收到命令：version[0m
+[36m[DEBUG]: 2020/04/09 20:46:07 handle.go:292:handleVersion: 接收到版本信息，双方高度一致，无需处理！[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:29:pubsubHandler: 本节点已接收到命令：version[0m
+[34m[INFO]: 2020/04/09 20:46:13 handle.go:267:handleVersion: 目标高度比本链小，准备向目标发送版本信息[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:version to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getHash[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:hashMap to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:255:handleGetHash: 已发送获取hash列表命令[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000036aea47b801cc80808098cb1872bfdd19c71faacd3b5fc5d9f7cf6d8ee[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000033f8437b21f7116d8ca312d280c561a7b7ade4fb959199534545f57e00[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000008dd3c1127d72ea04ef8bb6625dcb8e1e974ef34f272ea4818c1db090d0[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000002c7a07eb750fb89634b9fc9a055386050e48364916aaf9940a0a4fd43f[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000074c0768e8587dd7533bec539d2f286199212a11b2412c3f683db44e143[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000005621ebea6360801f89ac32efd79f499ae01d7fb2705c9252b0d67789d4[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000b11d3650221c01a44ed46c51874b17f0702f2c365e44b29d779c446158[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000008bb3c781435950a1231f40b702706e0fc995e09e51cf6d90699e05cee1[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000007ae3acaaf81a5b9af7c0a684bf0c9a2b9200c869c2780d6b1eeac730d0[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000015ad3c2117d6bf5cc6fbe1c4a4e4b5e9f020519682f6130d90e6416797[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000000753da570a2cd6a76c2c59ee672d3e7be91f7ae530bd2b26cdd5ec40a8[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000d6f9f7be368660dd0bd6efcf4885a155361e177f3e5ea8c2bbdb005c9e[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000dc0890924dd674dec9df6f2530ba56068c090f342ec64760e4f05e4db5[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000000f5e47898a7610c4bdb5799d1d95b2cbd817ba3fbd088381c69b46c2fb[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000ee31be7e58208652a0f741fd551de0056b88ae33f843a7c23804040dfd[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000000184cee4d9d4ee782061e903ff3601e2bc258f91ab0d950e6992a14eaa[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000a9861785ca7c19923e66ae653021dde147978a174d03f9fefadafc810b[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000afb5b95e1f013f4ebcc4cb61e91354d1634e177d8553355afc7fa1e194[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000e9c5534f372fe96b3c2b14038a1d002b77767dc7385143050754fafe39[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000944877d04d06ed23b916222c6286a6ee3c79b2919fd36ab910135ec6a8[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000004bde54e9d12d60ac70b10acc013322873e24da5d980eb52bf1b48654ca[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000008976545e82700a84f4d1d19df0d28adcece82f07f61ea4732583286e6d[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000c930497a30cc378df31d355bc333a34134f16440ecdae495ef35999988[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000054dd9bd1ff34f3c6cfd9a392cc628a25ae0211b9aebd5bf4a9396250d6[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000d8a3e92242d8d63e1b57bcf04557354c34d987fd3cdd0571c1da651613[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000d9711ce6c32ec7552164f064c952692e4f7a4bebe504b75d38274a6abf[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000cbd54987285b7af421f9c01020aa1278802de336615ea1ac368c7a0e75[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000001681854e14a4e9edde6951927b3ea0c02c107fdce940c13fd43d04ad48[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000c08a1dd5eead72fe87ef01af31ea0a8255905bda31b4ea4225a98d9639[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000008b63e924fe9d017fdef7a7ed62b2e01571d96b55f81835209c2e2efa95[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000cf7fb909c13c81ac4e1cc493ecf597dbf50d14176e0e8364153655385f[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000fbafee4464bd121af8b12da6213dbb2eb76215f1db99aa59b688ba1118[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000001dcab1e74bcc53b1b4cfc56a558a5e9b22c432e5fbc17d4e46d299853a[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000005eebe9ab4cbd011a81960e82abe5d07781668d4b7d06c513a8faa3d95e[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000001a6ff26f0b7bec2de7982d6cd4759e6939fadc17c54e8235ec0a3e831f[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000091c3c9e2e10f265d20925eb07665ce85813d077d7b493bcf53325fb7f6[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000f8e4112feffd38bc6fa87bb3244c0a29949666ca7c65c74e9e5e40d4fc[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000cebee45621a914bde4727b86d87f4ceaa85450b729618ff79954ef9879[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000004d5cba382474371bbe990b5cdb700844e53a69f728644df306159c0871[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000009e33f27c2b437267204f91bb7b27d6c7713d620ce74000d8551e86e2a6[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000004778a87b7e5f5da554db6acb26a07c1b8b9a2897348658e0d34b61bdec[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000749379e995f45b41cec278f6b34724359cd948e6d5119cc77d4227c905[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000f1616e191174d24c0e5d05b4485b05f691be1e9fde02c2e76234375d21[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000003bc66964c4b901425ae005354f0ade0a49dbf0134f64e6fc2bd26cc959[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[32m[TRACE]: 2020/04/09 20:46:13 handle.go:58:handleStream: 本节点已接收到命令：getBlock[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000006d4879af60f57df0cb6dc21dda99cf6aa04541f67e855068f4b05cf807[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000004058e103511b8bed60e0f1f0198efa84e1428f7e3247f6160b08d75f9[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000007f36fdd5037cd855c10a7329782f7eda4b732ccbf5a4270c2c06c744f0[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000091649a2979ae075928522584b97286ef9077484db52ab84773669a6bef[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000b31e0df5761d8eafefcc518ef5e2e141b1c29da669b400614cde0963ce[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000004a6e123dedae1ef85d9aa06e630e2c54992b7a0b4b78ee27b0e47da1e6[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000015499f4935807c1910d068013f52371a3600f26369d6bbe9e9b9ac6c98[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000bc5b69f008c89860d3a30fed7d6b26b260e3ea8317c2ebbb7db02ef8ed[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000003545308106be1a5b2e2e87bce85fe5ecd7a37e3f0ff98941baa82e4498[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000008531649a8699039109ced5e21242af9455bff2a9e0c481738fdb080a03[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000009a2100d5e0299469e07b5210da06bd340e42216bd96024362a4c9fb5e5[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000e99e9f9e15e636130759dd1a90bbd38b5f19ddc282490b65f401cdacae[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000006b850d231d7f5caa11550e09bd7f3cdd6bdb642d95d71758c34743c2c5[0m
+[36m[DEBUG]: 2020/04/09 20:46:13 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000a685e6bf1f934b015868df10be76913ee74f4299c2ef9a94e300f7586e[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000062b46dc46bd8b31e56f44cfc446062c8434a6391302481620fbfde8ca0[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000e47689dcabf5799cbb1a95f973d4c8e39b00787461b17b35809758a38b[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000ddb7587ef9ced3e41a520be9b0e7585fa348e3ecddabd1554c1982d3d4[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为0000008ce1609d3f51ad946237b48ed622b0611c78a28e86533d5a5729e7ca55[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为00000038dc29a96363b6174e6c4aec3c19477d072181d4f909d8a1bf49912fd2[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 handle.go:217:handleGetBlock: 本节点已将区块数据发送到/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d，该块hash为000000405ac1b77a8f856cec5b54cee24bf06fedad4fe1c055aae3adfe3abb15[0m
+[36m[DEBUG]: 2020/04/09 20:46:14 send.go:95:SendMessage: send cmd:block to peer:{QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d: [/ip4/0.0.0.0/tcp/9005]}[0m
+[32m[TRACE]: 2020/04/09 20:46:18 handle.go:29:pubsubHandler: 本节点已接收到命令：myError[0m
+[33m[WARN]: 2020/04/09 20:46:18 handle.go:81:handleMyError: 节点:/ip4/0.0.0.0/tcp/9005/p2p/QmWxSHGa2h8En6sWisa4Y7CZcQQdmmy2XMMEqjedR9VF4d已退出网络[0m
+[32m[TRACE]: 2020/04/09 20:46:20 handle.go:29:pubsubHandler: 本节点已接收到命令：myError[0m
+[33m[WARN]: 2020/04/09 20:46:20 handle.go:81:handleMyError: 节点:/ip4/0.0.0.0/tcp/9003/p2p/Qme8sdGyNQuBkZda5NGqcoRxdKJufyiD5fWENHkm5FcK3c已退出网络[0m
+[34m[INFO]: 2020/04/10 17:07:57 server.go:221:StartWebsocketServer: =====Starting v3 websocketServer:0.0.0.0:7003=======[0m
+[34m[INFO]: 2020/04/10 17:07:57 server.go:47:StartNode: [*] 监听IP地址: 0.0.0.0 端口号: 9003[0m
+[34m[INFO]: 2020/04/10 17:07:57 server.go:101:StartNode: [*] 你的P2P地址信息: /ip4/0.0.0.0/tcp/9003/p2p/QmS9aoTtXGgtfFp6xwfTSf1zsLodiqU9DMt86vAyMxM9Dt[0m
+[34m[INFO]: 2020/04/10 17:08:03 websocket_handler.go:70:WebSocketPushMessage: 检测到共有0个用户节点接入[0m
+[32m[TRACE]: 2020/04/10 17:08:03 send.go:35:SendVersionToPeers: version信息发送完毕...[0m
+[32m[TRACE]: 2020/04/10 17:08:03 handle.go:29:pubsubHandler: 本节点已接收到命令：version[0m
+[36m[DEBUG]: 2020/04/10 17:08:03 handle.go:296:handleVersion: 接收到版本信息，双方高度一致，无需处理！[0m
+[32m[TRACE]: 2020/04/10 17:08:03 handle.go:58:handleStream: 本节点已接收到命令：version[0m
+[36m[DEBUG]: 2020/04/10 17:08:03 handle.go:285:handleVersion: 对方版本比咱们大{0 13 /ip4/0.0.0.0/tcp/9006/p2p/QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV},发送获取区块的hash信息！[0m
+[32m[TRACE]: 2020/04/10 17:08:03 handle.go:58:handleStream: 本节点已接收到命令：version[0m
+[36m[DEBUG]: 2020/04/10 17:08:03 send.go:95:SendMessage: send cmd:getHash to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:03 handle.go:296:handleVersion: 接收到版本信息，双方高度一致，无需处理！[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：hashMap[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：1[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：2[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：3[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：4[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：5[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：6[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：7[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：8[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：9[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：10[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：11[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：12[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 send.go:95:SendMessage: send cmd:getBlock to peer:{QmebvXooBRRNWsgZBX8bbjJczRARWMbBL9hnBtaNg6BPmV: [/ip4/0.0.0.0/tcp/9006]}[0m
+[36m[DEBUG]: 2020/04/10 17:08:04 handle.go:241:handleHashMap: 已发送获取区块信息命令,目标高度为：13[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：000000ec0e8a3e043263b7a06d9d9a9f2d85909c159ebc153fe740afb21aa745[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：00000068ae1c20cba286fc6458fff19c4e4202db732ad0dc705458e114782a7a[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：000000b3996bf6be833fa9286fcc7b8347e21fe90edbea398b00e8f720979d3f[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：1[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：2[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：000000c5611762e1e71ff7e27fe3e33cebcba96858cfc9a288c57826d9e9ff6c[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：0000001e314921fc7aff55652445fd04b8ce6d3720ce693d98374344523ce352[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：0000000da95d095f0b30523659a8ecbb0feab3d964a76f3834bc9c92a8f8ac6e[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：3[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：9[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：000000e241fb01169f42f85025b5d8f551f7392956f55c4158308d42b4bb8a50[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：10[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：0000003b184a2407a2130aed0b01e6cc6509740a0d9ad423de44be998395bda0[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：00000047a3a27c14cf6dbfc7d40923ef44a12e8c967d8ba45ddaf1b78bce6e2d[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：8[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：7[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：4[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：000000e6282af1c3d9832281bb396c1386140dcaae71d1130198ed3ea85360c3[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：6[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：000000c9c23da0c52364344fa0197dc7e06a62bd96a1949a1a33b93303faf3ed[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：5[0m
+[32m[TRACE]: 2020/04/10 17:08:04 handle.go:58:handleStream: 本节点已接收到命令：block[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：11[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：000000830ff782e830e4d4c87422b35d562a0646181596fed3c5ee4aabfea7ab[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:170:handleBlock: 本节点已接收到来自其他节点的区块数据，该块hash为：00000080dacfa568f74a3bbdd1e873d3f68660065538ce0881f21481c0d0ed79[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：12[0m
+[34m[INFO]: 2020/04/10 17:08:04 handle.go:176:handleBlock: POW验证通过,该区块高度为：13[0m
+[34m[INFO]: 2020/04/10 17:08:05 handle.go:183:handleBlock: 创世区块验证通过,已存入本地数据库...[0m
+[34m[INFO]: 2020/04/10 17:08:05 handle.go:204:handleBlock: prehash验证通过,该区块高度为:2,[0m
+[34m[INFO]: 2020/04/10 17:08:05 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度2,哈希000000b3996bf6be833fa9286fcc7b8347e21fe90edbea398b00e8f720979d3f[0m
+[36m[DEBUG]: 2020/04/10 17:08:05 handle.go:193:handleBlock: 区块高度2尚未同步,等待同步...[0m
+[34m[INFO]: 2020/04/10 17:08:06 handle.go:204:handleBlock: prehash验证通过,该区块高度为:3,[0m
+[34m[INFO]: 2020/04/10 17:08:06 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度3,哈希00000068ae1c20cba286fc6458fff19c4e4202db732ad0dc705458e114782a7a[0m
+[36m[DEBUG]: 2020/04/10 17:08:06 handle.go:193:handleBlock: 区块高度3尚未同步,等待同步...[0m
+[34m[INFO]: 2020/04/10 17:08:07 handle.go:204:handleBlock: prehash验证通过,该区块高度为:4,[0m
+[34m[INFO]: 2020/04/10 17:08:07 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度4,哈希00000047a3a27c14cf6dbfc7d40923ef44a12e8c967d8ba45ddaf1b78bce6e2d[0m
+[36m[DEBUG]: 2020/04/10 17:08:07 handle.go:193:handleBlock: 区块高度4尚未同步,等待同步...[0m
+[34m[INFO]: 2020/04/10 17:08:07 handle.go:204:handleBlock: prehash验证通过,该区块高度为:5,[0m
+[34m[INFO]: 2020/04/10 17:08:07 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度5,哈希000000e6282af1c3d9832281bb396c1386140dcaae71d1130198ed3ea85360c3[0m
+[36m[DEBUG]: 2020/04/10 17:08:07 handle.go:193:handleBlock: 区块高度5尚未同步,等待同步...[0m
+[36m[DEBUG]: 2020/04/10 17:08:08 handle.go:193:handleBlock: 区块高度6尚未同步,等待同步...[0m
+[34m[INFO]: 2020/04/10 17:08:08 handle.go:204:handleBlock: prehash验证通过,该区块高度为:7,[0m
+[34m[INFO]: 2020/04/10 17:08:08 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度7,哈希000000e241fb01169f42f85025b5d8f551f7392956f55c4158308d42b4bb8a50[0m
+[36m[DEBUG]: 2020/04/10 17:08:08 handle.go:193:handleBlock: 区块高度7尚未同步,等待同步...[0m
+[34m[INFO]: 2020/04/10 17:08:09 handle.go:204:handleBlock: prehash验证通过,该区块高度为:6,[0m
+[34m[INFO]: 2020/04/10 17:08:09 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度6,哈希0000003b184a2407a2130aed0b01e6cc6509740a0d9ad423de44be998395bda0[0m
+[36m[DEBUG]: 2020/04/10 17:08:09 handle.go:193:handleBlock: 区块高度8尚未同步,等待同步...[0m
+[34m[INFO]: 2020/04/10 17:08:10 handle.go:204:handleBlock: prehash验证通过,该区块高度为:9,[0m
+[34m[INFO]: 2020/04/10 17:08:10 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度9,哈希000000c5611762e1e71ff7e27fe3e33cebcba96858cfc9a288c57826d9e9ff6c[0m
+[34m[INFO]: 2020/04/10 17:08:10 handle.go:204:handleBlock: prehash验证通过,该区块高度为:8,[0m
+[34m[INFO]: 2020/04/10 17:08:10 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度8,哈希0000001e314921fc7aff55652445fd04b8ce6d3720ce693d98374344523ce352[0m
+[36m[DEBUG]: 2020/04/10 17:08:10 handle.go:193:handleBlock: 区块高度9尚未同步,等待同步...[0m
+[34m[INFO]: 2020/04/10 17:08:11 handle.go:204:handleBlock: prehash验证通过,该区块高度为:10,[0m
+[34m[INFO]: 2020/04/10 17:08:11 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度10,哈希0000000da95d095f0b30523659a8ecbb0feab3d964a76f3834bc9c92a8f8ac6e[0m
+[36m[DEBUG]: 2020/04/10 17:08:11 handle.go:193:handleBlock: 区块高度10尚未同步,等待同步...[0m
+[34m[INFO]: 2020/04/10 17:08:12 handle.go:204:handleBlock: prehash验证通过,该区块高度为:11,[0m
+[34m[INFO]: 2020/04/10 17:08:12 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度11,哈希000000c9c23da0c52364344fa0197dc7e06a62bd96a1949a1a33b93303faf3ed[0m
+[36m[DEBUG]: 2020/04/10 17:08:12 handle.go:193:handleBlock: 区块高度11尚未同步,等待同步...[0m
+[36m[DEBUG]: 2020/04/10 17:08:12 handle.go:193:handleBlock: 区块高度12尚未同步,等待同步...[0m
+[34m[INFO]: 2020/04/10 17:08:13 handle.go:204:handleBlock: prehash验证通过,该区块高度为:12,[0m
+[34m[INFO]: 2020/04/10 17:08:13 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度12,哈希000000830ff782e830e4d4c87422b35d562a0646181596fed3c5ee4aabfea7ab[0m
+[34m[INFO]: 2020/04/10 17:08:14 handle.go:204:handleBlock: prehash验证通过,该区块高度为:13,[0m
+[34m[INFO]: 2020/04/10 17:08:14 handle.go:205:handleBlock: 总验证通过已存入本地库,区块高度13,哈希00000080dacfa568f74a3bbdd1e873d3f68660065538ce0881f21481c0d0ed79[0m
+[32m[TRACE]: 2020/04/10 17:09:38 handle.go:29:pubsubHandler: 本节点已接收到命令：transaction[0m
+[36m[DEBUG]: 2020/04/10 17:09:38 handle.go:133:mineBlock: 交易池已满足挖矿交易数量大小限制:2,区块头即将分发至用户节点[0m
+[34m[INFO]: 2020/04/10 17:20:34 server.go:221:StartWebsocketServer: =====Starting v3 websocketServer:0.0.0.0:7003=======[0m
+[34m[INFO]: 2020/04/10 17:20:34 server.go:47:StartNode: [*] 监听IP地址: 0.0.0.0 端口号: 9003[0m
+[34m[INFO]: 2020/04/10 17:20:34 server.go:101:StartNode: [*] 你的P2P地址信息: /ip4/0.0.0.0/tcp/9003/p2p/QmfYDgKWWmBHmzE3TkQM1vFnRJBZD47i31Q66K3f7WRQtn[0m
+[34m[INFO]: 2020/04/10 17:20:43 websocket_handler.go:70:WebSocketPushMessage: 检测到共有0个用户节点接入[0m
+[32m[TRACE]: 2020/04/10 17:20:43 send.go:35:SendVersionToPeers: version信息发送完毕...[0m
+[32m[TRACE]: 2020/04/10 17:20:43 handle.go:29:pubsubHandler: 本节点已接收到命令：version[0m
+[36m[DEBUG]: 2020/04/10 17:20:43 handle.go:303:handleVersion: 接收到版本信息，双方高度一致，无需处理！[0m
+[32m[TRACE]: 2020/04/10 17:20:54 handle.go:29:pubsubHandler: 本节点已接收到命令：transaction[0m
+[36m[DEBUG]: 2020/04/10 17:20:54 handle.go:133:mineBlock: 交易池已满足挖矿交易数量大小限制:2,或者时间超时,区块头即将分发至用户节点[0m
+[36m[DEBUG]: 2020/04/10 17:20:54 handle.go:138:mineBlock: 本块打包交易数量:1[0m
+[36m[DEBUG]: 2020/04/10 17:20:54 blockchain.go:435:verifyTransactionsSign: 已完成数字签名验证[0m
+[36m[DEBUG]: 2020/04/10 17:20:54 blockchain.go:340:VerifyTransBalance: 已完成UTXO交易余额验证[0m
+[33m[WARN]: 2020/04/10 17:20:54 blockchain.go:73:CreataRewardTransaction: 没有设置挖矿奖励地址，如果出块则不会给予奖励代币[0m
+[34m[INFO]: 2020/04/10 17:20:54 websocket_handler.go:70:WebSocketPushMessage: 检测到共有0个用户节点接入[0m

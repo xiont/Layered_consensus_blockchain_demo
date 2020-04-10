@@ -122,15 +122,23 @@ func mineBlock(t Transactions) {
 	defer lock.Unlock()
 	//将临时交易池的交易添加进交易池
 	tradePool.Ts = append(tradePool.Ts, t.Ts...)
+	bc := blc.NewBlockchain()
+	lastTimeStamp := bc.GetLastBlockTime()
 
+	//此处判断条件挖矿
 	for {
-		//满足交易池规定的大小后进行挖矿
-		if len(tradePool.Ts) >= TradePoolLength {
-			log.Debugf("交易池已满足挖矿交易数量大小限制:%d,区块头即将分发至用户节点", TradePoolLength)
-			mineTrans := Transactions{make([]Transaction, TradePoolLength)}
-			copy(mineTrans.Ts, tradePool.Ts[:TradePoolLength])
+		//满足交易池规定的大小后进行挖矿 或者 超时(收到与上一个区块距离120s)
+		if len(tradePool.Ts) >= TradePoolLength || ((time.Now().Unix()-lastTimeStamp) > 120 && len(tradePool.Ts) > 0) {
+			log.Debugf("交易池已满足挖矿交易数量大小限制:%d,或者时间超时,区块头即将分发至用户节点", TradePoolLength)
+			MineLength := len(tradePool.Ts)
+			if MineLength > TradePoolLength {
+				MineLength = TradePoolLength
+			}
+			log.Debugf("本块打包交易数量:%d", MineLength)
 
-			bc := blc.NewBlockchain()
+			mineTrans := Transactions{make([]Transaction, MineLength)}
+			copy(mineTrans.Ts, tradePool.Ts[:MineLength])
+
 			//如果当前节点区块高度小于网络最新高度，则等待节点更新区块后在进行挖矿
 			for {
 				currentHeight := bc.GetLastBlockHeight()
@@ -150,7 +158,7 @@ func mineBlock(t Transactions) {
 			bc.Transfer(nTs, send, wsend)
 			//剔除已打包进区块的交易
 			newTrans := []Transaction{}
-			newTrans = append(newTrans, tradePool.Ts[TradePoolLength:]...)
+			newTrans = append(newTrans, tradePool.Ts[MineLength:]...)
 			tradePool.Ts = newTrans
 		} else {
 			log.Infof("当前交易池数量:%d，交易池未满%d，暂不进行挖矿操作", len(tradePool.Ts), TradePoolLength)

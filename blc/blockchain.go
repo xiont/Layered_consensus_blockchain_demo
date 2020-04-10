@@ -478,6 +478,15 @@ func (bc *blockchain) GetLastBlockHeight() int {
 	return lastblock.BBlockHeader.Height
 }
 
+func (bc *blockchain) GetLastBlockTime() int64 {
+	bcl := NewBlockchainIterator(bc)
+	lastblock := bcl.Next()
+	if lastblock == nil {
+		return 0
+	}
+	return lastblock.BBlockHeader.TimeStamp
+}
+
 //通过高度获取区块hash
 func (bc *blockchain) GetBlockHashByHeight(height int) []byte {
 	bcl := NewBlockchainIterator(bc)
